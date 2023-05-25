@@ -12,7 +12,7 @@
           </div>
           <div class="flex flex-col justify-between items-start">
             <div>Created by {{profile.username}}</div>
-            <div class="text-gray-400">{{views}} views • {{ getElapsedTime(created_time) }}</div>
+            <div class="text-gray-400">{{views}} views • {{ getElapsedTime(updated_time) }}</div>
           </div>
         </div>
 
