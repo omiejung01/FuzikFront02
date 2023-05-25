@@ -57,13 +57,13 @@ export default {
       categories: [
         { q: "all", name: "ALL" },
         { q: "popular", name: "Popular music" },
-        { q: "pop", name: "Pop" },
+        //{ q: "pop", name: "Pop" },
         { q: "rock", name: "Rock" },
-        { q: "hiphop", name: "Hip-Hop" },
+        //{ q: "hiphop", name: "Hip-Hop" },
         { q: "guitar", name: "Guitar" },
-        { q: "ukulele", name: "Ukulele" },
+        //{ q: "ukulele", name: "Ukulele" },
         { q: "piano", name: "Piano" },
-        { q: "keyboard", name: "Keyboard" },
+        //{ q: "keyboard", name: "Keyboard" },
       ],
 
       currentMode: "solo",
