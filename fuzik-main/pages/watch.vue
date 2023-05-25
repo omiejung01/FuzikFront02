@@ -98,6 +98,7 @@ export default {
       this.is_fans = false
       this.is_liked = false
       this.updated_time = videoData.updated_time
+      this.created_time = videoData.created_time
     }
     
   }
