@@ -14,6 +14,7 @@
       :desc="desc"
       :url="url"
       :updated_time="updated_time"
+      :created_time="created_time"
     />
 
   </div>
@@ -43,6 +44,7 @@ export default {
       is_fans: false,
       is_liked: false,
       updated_time: "",
+      created_time: "",
     }
   },
 
@@ -81,6 +83,7 @@ export default {
       this.is_fans = false
       this.is_liked = false
       this.updated_time = videoData.updated_time
+      this.created_time = videoData.created_time
     }
 
     if (this.currentMode == `collab`) {
