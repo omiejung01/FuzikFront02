@@ -206,28 +206,28 @@ export default {
                     str_time = year_num + ' years ago';
                 }
             } else if (duration > month_val ) {
-                month_num = Math.floor(duration / month_val);
+                var month_num = Math.floor(duration / month_val);
                 if (month_num <= 1) {
                     str_time = 'one month ago';
                 } else {
                     str_time = month_num + ' months ago';
                 }
             } else if (duration > day_val ) {
-                day_num = Math.floor(duration / day_val);
+                var day_num = Math.floor(duration / day_val);
                 if (day_num <= 1) {
                     str_time = 'one day ago';
                 } else {
                     str_time = day_num + ' days ago';
                 }
             } else if (duration > hour_val ) {
-                hour_num = Math.floor(duration / hour_val);
+                var hour_num = Math.floor(duration / hour_val);
                 if (hour_num <= 1) {
                     str_time = 'one hour ago';
                 } else {
                     str_time = hour_num + ' hours ago';
                 }
             } else if (duration > min_val ) {
-                min_num = Math.floor(duration / min_val);
+                var min_num = Math.floor(duration / min_val);
                 if (min_num <= 1) {
                     str_time = 'one minute ago';
                 } else {
