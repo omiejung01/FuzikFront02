@@ -12,7 +12,8 @@
           </div>
           <div class="flex flex-col justify-between items-start">
             <div>Created by {{profile.username}}</div>
-            <div class="text-gray-400">{{views}} views • {{ getElapsedTime(updated_time) }}_{{ durationTime(created_time) }}_{{ updated_time }}_</div>            
+            <!-- Edited by Ohm 31 May 2023 -->
+            <div class="text-gray-400">{{views}} views • {{ durationTime(created_time) }}</div>            
           </div>
         </div>
 
