@@ -212,13 +212,6 @@ export default {
                 } else {
                     str_time = month_num + ' months ago';
                 }
-            } else if (duration > month_val ) {
-                month_num = Math.floor(duration / month_val);
-                if (month_num <= 1) {
-                    str_time = 'one month ago';
-                } else {
-                    str_time = month_num + ' months ago';
-                }
             } else if (duration > day_val ) {
                 day_num = Math.floor(duration / day_val);
                 if (day_num <= 1) {
