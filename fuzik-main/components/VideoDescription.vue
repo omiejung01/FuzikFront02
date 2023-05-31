@@ -238,7 +238,6 @@ export default {
                 str_time = 'just now';
             } 
             return str_time;
-
     },
 
     getElapsedTime(dateString) {

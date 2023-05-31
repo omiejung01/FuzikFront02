@@ -28,7 +28,7 @@
       <div class="flex flex-col text-gray-400 text-xs lg:text-sm">
         <div>Created by {{video.musician_name}}</div>
         <div>{{ video.view_count }} views </div>
-        <div>{{ getElapsedTime(video.updated_time) }}</div>
+        <div>{{ durationTime(video.updated_time) }}</div>
       </div>
     </NuxtLink>
   </div>
@@ -45,6 +45,69 @@ export default {
   },
 
   methods: {
+
+    durationTime(dateString) {
+            const date = new Date(Date.parse(dateString));
+            const now = Date.now();
+            //document.write('now: ' + now);
+            //document.write('date: ' + date);
+            
+            var duration = now - date;
+            //document.write('duration: ' + duration);
+            var str_time = '';
+
+            const year_val = (1000 * 60 * 60 * 24 * 365); //31536000000;
+            const month_val = (1000 * 60 * 60 * 24 * 30); //2592000000;
+            const day_val = (1000 * 60 * 60 * 24); //86400000;
+            const hour_val = (1000 * 60 * 60); //3600000
+            const min_val = (1000 * 60); //60000
+            
+            //document.write('year_val: ' + year_val);
+            var year_num = 0;
+            if (duration > year_val) {
+                year_num = Math.floor(duration / year_val);
+                //duration = duration - (year_num  * year_val);
+                //document.write('year_num:' + year_num);
+                if (year_num <= 1) {
+                    str_time = 'one year ago';
+                } else  {
+                    str_time = year_num + ' years ago';
+                }
+            } else if (duration > month_val ) {
+                var month_num = Math.floor(duration / month_val);
+                if (month_num <= 1) {
+                    str_time = 'one month ago';
+                } else {
+                    str_time = month_num + ' months ago';
+                }
+            } else if (duration > day_val ) {
+                var day_num = Math.floor(duration / day_val);
+                if (day_num <= 1) {
+                    str_time = 'one day ago';
+                } else {
+                    str_time = day_num + ' days ago';
+                }
+            } else if (duration > hour_val ) {
+                var hour_num = Math.floor(duration / hour_val);
+                if (hour_num <= 1) {
+                    str_time = 'one hour ago';
+                } else {
+                    str_time = hour_num + ' hours ago';
+                }
+            } else if (duration > min_val ) {
+                var min_num = Math.floor(duration / min_val);
+                if (min_num <= 1) {
+                    str_time = 'one minute ago';
+                } else {
+                    str_time = min_num + ' minutes ago';
+                }
+            } else { 
+                str_time = 'just now';
+            } 
+            return str_time;
+    },
+
+
     getElapsedTime(dateString) {
       const date = new Date(dateString);
       const now = Date.now();
