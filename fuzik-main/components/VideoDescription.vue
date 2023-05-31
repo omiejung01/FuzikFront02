@@ -12,7 +12,7 @@
           </div>
           <div class="flex flex-col justify-between items-start">
             <div>Created by {{profile.username}}</div>
-            <div class="text-gray-400">{{views}} views • {{ getElapsedTime(updated_time) }}</div>
+            <div class="text-gray-400">{{views}} views • {{ getElapsedTime(updated_time) }}_{{ durationTime(created_time) }}_{{ updated_time }}_</div>            
           </div>
         </div>
 
@@ -148,6 +148,7 @@ export default {
     "desc",
     "url",
     "updated_time",
+    "created_time",
   ],
 
   data() {
@@ -176,6 +177,75 @@ export default {
   },
 
   methods: {
+
+    durationTime(dateString) {
+            const date = new Date(Date.parse(dateString));
+            const now = Date.now();
+            //document.write('now: ' + now);
+            //document.write('date: ' + date);
+            
+            var duration = now - date;
+            //document.write('duration: ' + duration);
+            var str_time = '';
+
+            const year_val = (1000 * 60 * 60 * 24 * 365); //31536000000;
+            const month_val = (1000 * 60 * 60 * 24 * 30); //2592000000;
+            const day_val = (1000 * 60 * 60 * 24); //86400000;
+            const hour_val = (1000 * 60 * 60); //3600000
+            const min_val = (1000 * 60); //60000
+            
+            //document.write('year_val: ' + year_val);
+            var year_num = 0;
+            if (duration > year_val) {
+                year_num = Math.floor(duration / year_val);
+                //duration = duration - (year_num  * year_val);
+                //document.write('year_num:' + year_num);
+                if (year_num <= 1) {
+                    str_time = 'one year ago';
+                } else  {
+                    str_time = year_num + ' years ago';
+                }
+            } else if (duration > month_val ) {
+                month_num = Math.floor(duration / month_val);
+                if (month_num <= 1) {
+                    str_time = 'one month ago';
+                } else {
+                    str_time = month_num + ' months ago';
+                }
+            } else if (duration > month_val ) {
+                month_num = Math.floor(duration / month_val);
+                if (month_num <= 1) {
+                    str_time = 'one month ago';
+                } else {
+                    str_time = month_num + ' months ago';
+                }
+            } else if (duration > day_val ) {
+                day_num = Math.floor(duration / day_val);
+                if (day_num <= 1) {
+                    str_time = 'one day ago';
+                } else {
+                    str_time = day_num + ' days ago';
+                }
+            } else if (duration > hour_val ) {
+                hour_num = Math.floor(duration / hour_val);
+                if (hour_num <= 1) {
+                    str_time = 'one hour ago';
+                } else {
+                    str_time = hour_num + ' hours ago';
+                }
+            } else if (duration > min_val ) {
+                min_num = Math.floor(duration / min_val);
+                if (min_num <= 1) {
+                    str_time = 'one minute ago';
+                } else {
+                    str_time = min_num + ' minutes ago';
+                }
+            } else { 
+                str_time = 'just now';
+            } 
+            return str_time;
+
+    },
 
     getElapsedTime(dateString) {
       const date = new Date(Date.parse(dateString));
