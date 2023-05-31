@@ -25,7 +25,7 @@
             <div class="flex flex-col text-gray-400 text-xs lg:text-sm">
               <div v-if="mode == `solo`">Created by {{video.musician_name}}</div>
               <div v-if="mode == `collab`">Created by {{video.owner_name}}</div>
-              <div> {{ video.view_count }} views • {{ durationTime(video.updated_time) }}</div> //updated_time
+              <div> {{ video.view_count }} views • {{ durationTime(video.created_time) }}</div>
             </div>
           </div>
         </div>

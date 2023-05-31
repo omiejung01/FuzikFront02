@@ -28,7 +28,7 @@
       <div class="flex flex-col text-gray-400 text-xs lg:text-sm">
         <div>Created by {{video.musician_name}}</div>
         <div>{{ video.view_count }} views </div>
-        <div>{{ durationTime(video.updated_time) }}</div>
+        <div>{{ durationTime(video.created_time) }}</div>
         <!-- <div>{{ durationTime(video.updated_time) }}</div> -->
       </div>
     </NuxtLink>
